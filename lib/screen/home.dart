@@ -21,7 +21,12 @@ class _HomeState extends State<Home> {
           children: spaces
               .map(
                 (space) => GestureDetector(
-                  onTap: () => context.pushNamed('detail', params: <String, String>{'tag': space.id, 'description': space.description, 'image': space.image}),
+                  onTap: () => context.pushNamed('detail',
+                      params: <String, String>{
+                        'tag': space.id,
+                        'description': space.description,
+                        'image': space.image
+                      }),
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 10, right: 10, top: 5, bottom: 5),
@@ -73,12 +78,18 @@ class _HomeState extends State<Home> {
                             right: 20,
                             child: Hero(
                               tag: '${space.id}-button',
-                              child: Material(
-                                elevation: 10,
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
+                              child: Container(
+                                decoration: const BoxDecoration(
                                   color: Colors.yellow,
-                                  child: const Icon(Icons.add),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                ),
+                                padding: const EdgeInsets.all(10),
+                                child: const Material(
+                                  color: Colors.yellow,
+                                  child: Text(
+                                    'Detail',
+                                  ),
                                 ),
                               ),
                             ),

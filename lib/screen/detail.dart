@@ -40,12 +40,15 @@ class _DetailState extends State<Detail> {
                 left: 20,
                 child: Hero(
                   tag: '${widget.tag}-button',
-                  child: Material(
-                    elevation: 10,
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
+                  child: Container(
+                    decoration: const BoxDecoration(
                       color: Colors.green,
-                      child: const Icon(Icons.download),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
+                    padding: const EdgeInsets.all(10),
+                    child: Material(
+                      color: Colors.green,
+                      child: Text(widget.tag),
                     ),
                   ),
                 ),
